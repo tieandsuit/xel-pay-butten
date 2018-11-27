@@ -1,0 +1,36 @@
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="crypto_browser.js"></script>
+<script type="text/javascript" src="xelbutton.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,600,400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" media="screen" href="xelbutton.css" />
+<script>
+	$( document ).ready(function() {
+		$('xel_button').xelbutton({
+			'recipient' : 'XEL-MAYC-ZZ3Y-YX56-6NH52',
+			'server'  : 'xelbutton.php',
+			'fee'     : '0.1',
+			'amount'  : '1.0',
+			'title'   : 'Example payment',
+			'success' : function (hash, transaction) {
+				console.log('Transaction1 is complete, transaction id '+transaction);
+			}});
+			$('xel_button2').xelbutton({
+				'recipient' : 'XEL-MAYC-ZZ3Y-YX56-6NH52',
+				'server'  : 'xelbutton.php',
+				'fee'     : '0.1',
+				'amount'  : '2.0',
+				'title'   : 'Example payment 2',
+				'mainButton': "images/pay_with_xel_gray.png",
+				'success' : function (hash, transaction) {
+					console.log('Transaction3 is complete, transaction id '+transaction);
+			}});
+	});
+
+	</script>
+	</head>
+	<body>
+	<div id='xel_button'></div>
+	<br />
+	<div id='xel_button2'></div>
+</body>
